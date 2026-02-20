@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <title>Register • GreenPlate</title>
+
+  <link rel="stylesheet"
+        href="css/style.css">
+
+  <style>
+
+    
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+
+      background:
+      linear-gradient(
+        135deg,
+        #18a75d,
+        #38f98c
+      );
+
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+
+    /* 📦 REGISTER CARD */
+    .container{
+
+      background:
+      rgba(255,255,255,0.15);
+
+      backdrop-filter:blur(12px);
+
+      padding:40px;
+      border-radius:18px;
+
+      width:350px;
+
+      box-shadow:
+      0 8px 25px
+      rgba(0,0,0,0.2);
+
+      color:white;
+      text-align:center;
+    }
+
+    h2{
+      margin-bottom:20px;
+    }
+
+    /* 🔤 INPUTS */
+    input, select{
+
+      width:100%;
+      padding:12px;
+      margin:10px 0;
+
+      border:none;
+      border-radius:8px;
+
+      outline:none;
+      font-size:14px;
+    }
+
+    /* 🔘 BUTTON */
+    button{
+
+      width:100%;
+      padding:12px;
+
+      border:none;
+      border-radius:8px;
+
+      background:#00bcd4;
+      color:white;
+
+      font-weight:bold;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    button:hover{
+      background:#0097a7;
+      transform:scale(1.03);
+    }
+
+    /* 🔗 LINK */
+    p{
+      margin-top:15px;
+      font-size:14px;
+    }
+
+    a{
+      color:#003d2c;
+      font-weight:bold;
+      text-decoration:none;
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+  <div class="container">
+
+    <h2>Create Account</h2>
+
+    <form id="registerForm">
+
+      <input
+        id="name"
+        placeholder="Full Name"
+        required
+      >
+
+      <input
+        id="email"
+        type="email"
+        placeholder="Email"
+        required
+      >
+
+      <input
+        id="password"
+        type="password"
+        placeholder="Password"
+        required
+      >
+
+      <!-- ROLE SELECT -->
+      <select id="role">
+
+        <option value="donor">
+          Donor
+        </option>
+
+        <option value="ngo">
+          NGO
+        </option>
+
+        <option value="volunteer">
+          Volunteer
+        </option>
+
+      </select>
+
+      <button type="submit">
+        Register
+      </button>
+
+    </form>
+
+    <p>
+      Already have account?
+      <a href="login.html">
+        Login
+      </a>
+    </p>
+
+  </div>
+
+
+  <script type="module"
+          src="js/auth.js"></script>
+
+
+  <script>
+
+    const role =
+      localStorage.getItem(
+        "selectedRole"
+      );
+
+    if(role){
+
+      document
+        .getElementById("role")
+        .value = role;
+    }
+
+  </script>
+
+</body>
+</html>

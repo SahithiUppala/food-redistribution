@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Donor Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="navbar">
+  <h2>Food Redistribution</h2>
+  <button id="logout">Logout</button>
+</div>
+
+<div class="container">
+
+  <h2>Welcome Donor 🎁</h2>
+
+  <div class="dashboard-grid">
+
+    <div class="card">
+      <h3>Total Donations</h3>
+      <h1 id="totalDonations">0</h1>
+    </div>
+
+    <div class="card">
+      <h3>Meals Donated</h3>
+      <h1 id="totalMeals">0</h1>
+    </div>
+
+    <div class="card">
+      <h3>Active Pickup</h3>
+      <div id="activePickup">No active pickup</div>
+    </div>
+
+  </div>
+
+  <br><br>
+
+  <div class="card">
+    <h3>Post New Donation</h3>
+
+    <input id="foodType" placeholder="Food Type">
+    <input id="quantity" placeholder="Quantity">
+    <input id="location" placeholder="Pickup Location">
+
+    <button onclick="postDonation()">Donate</button>
+  </div>
+
+  <br>
+
+  <div class="card">
+    <h3>Donation History</h3>
+    <div id="historyList"></div>
+  </div>
+
+</div>
+
+<!-- ✅ FIXED SCRIPT -->
+<script type="module" src="js/donor.js"></script>
+<script type="module" src="js/auth.js"></script>
+
+</body>
+</html>
